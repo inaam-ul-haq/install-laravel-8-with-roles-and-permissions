@@ -72,3 +72,53 @@ run this command. replace **your-app-name** with your app name
     php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider"
     
 to publish the migration and permission.php file
+
+## 7.  Set User Roles and Permissions
+
+* add this file (UserSeeder) in database/seeders directory to create user roles [UserSeeder](https://www.mediafire.com/file/cdnz4kda8ky5zfv/UserSeeder.php/file)
+* make changes in this file according to you need.
+
+## 8. add this code in User Model 
+
+    use Spatie\Permission\Traits\HasRoles;
+    use Spatie\Permission\Models\Role;
+    use Spatie\Permission\Models\Permission;
+    use Auth;
+
+add this under User class
+
+    use HasFactory,HasRoles;
+    
+    protected $guarded = [];
+    
+## 9. add this code in http/kernal => routeMiddleware
+
+    //roles and permission
+    'role' => \Spatie\Permission\Middlewares\RoleMiddleware::class,
+    'permission' => \Spatie\Permission\Middlewares\PermissionMiddleware::class,
+    'role_or_permission' => \Spatie\Permission\Middlewares\RoleOrPermissionMiddleware::class,
+    
+## 10. run this command
+
+    php artisan optimize:clear
+    php artisan config:clear
+
+## 11. create your table migration files if needed otherwise run this command 
+    
+    php artisan migrate
+
+## Now install Authentication (Login/Register Screens)
+
+Run the bolow commands to install laravel ui package
+
+    1. composer require laravel/ui
+    2. php artisan ui bootstrap--auth you can use (vue/bootstrap/react)
+    3. npm install && npm run dev
+    4. php artisan ui:auth
+    5. run laravel project with -> php artisan serve
+    5. visit -> [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
+
+### Auther: [Inaam ul haq](https://github.com/Inaam-ul-haq)
+### YouTube: [Techzhubb](https://www.youtube.com/c/techzhub)
+### Instagram: [Techzhubb](https://www.instagram.com/techzhubb/)
+### Facebook: [Techzhubb](https://www.facebook.com/techzhubb/)
