@@ -10,6 +10,28 @@ In this Repository you will get complete laravel 8 application with roles and au
 * composer [Download](https://getcomposer.org/Composer-Setup.exe)
 * git bash [Download](https://git-scm.com/downloads)
 
+I hope you already install xampp server
+
+## 1. Install Git Bash
+
+* Download git bash from this link -> [Download](https://git-scm.com/downloads)
+* simply install
+* after installation process complete
+* open folder where you want to install your laravel application
+* right click in folder and click in project folder and click on **Git Bash Here** option then run this command
+
+## 2. install composer
+
+* Download composer from this lnik -> [Download](https://getcomposer.org/Composer-Setup.exe)
+* simply install
+
+## 3. install nodeJs
+
+* download link for nodejs -> [Download](https://nodejs.org/en/download/)
+* simple install
+
+# Setup Application
+
 ## 1. Create application
 run this command. replace **your-app-name** with your app name
 
@@ -35,3 +57,18 @@ run this command. replace **your-app-name** with your app name
     DB_USERNAME=root
     DB_PASSWORD=
     
+## 4. install spatie package for assign roles and permissions
+
+    composer show spatie/laravel-permission
+    
+[Spatie Package Website Link](https://spatie.be/docs/laravel-permission/v4/installation-laravel)
+
+## 5. add this code in config/app.php in providers
+
+    Spatie\Permission\PermissionServiceProvider::class,
+
+## 6. run this in git bash
+
+    php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider"
+    
+to publish the migration and permission.php file
