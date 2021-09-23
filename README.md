@@ -4,10 +4,11 @@ In this Repository you will get complete laravel 8 application with roles and au
 ## System Requirements
 
 * Windows 10
-* XAMPP, WAMPP server
+* XAMPP, WAMPP server [Download](https://www.apachefriends.org/download.html)
 * PHP 7.4 or better
-* nodejs
-* composer
+* nodejs [Download](https://nodejs.org/en/download/)
+* composer [Download](https://getcomposer.org/Composer-Setup.exe)
+* git bash [Download](https://git-scm.com/downloads)
 
 ## 1. Create application
 run this command. replace **your-app-name** with your app name
