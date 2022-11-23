@@ -114,8 +114,7 @@ Run the bolow commands to install laravel ui package
     1. composer require laravel/ui:*
     2. php artisan ui bootstrap --auth you can use (vue/bootstrap/react)
     3. npm install && npm run dev
-    4. php artisan ui:auth
-    5. run laravel project with -> php artisan serve
+    4. run laravel project with -> php artisan serve
     5. visit -> [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
 
 **Auther**: [Inaam ul haq](https://github.com/Inaam-ul-haq)
